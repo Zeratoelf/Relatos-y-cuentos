@@ -45,7 +45,7 @@ body {
 
 .tablero {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 50px 0px;
     gap: 50px;
     /* overflow-y: scroll; */
@@ -55,7 +55,7 @@ body {
 .tablero ul {
     /* height: 100%; */
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 15px;
 
 }
@@ -82,8 +82,16 @@ font-size: 25px;
 margin-left: 0px;
 padding-left: 50px;
 padding-bottom: 0px;
-
+order: 1;
 }
+
+/* #fecha::before {
+    content: url(./img/manija/mani-4-removebg-preview.png);
+    width: 5px;
+    left: 50px;
+    position: absolute;
+} */
+
 .derecha {
     display: flex;
     justify-content: center;
@@ -101,6 +109,18 @@ padding-bottom: 0px;
     opacity: 0.8;
 }
 
+.derecha img.gradiante.primero { 
+    transform: rotate(-270deg);
+    bottom: 650px;
+    z-index: -1;
+}
+
+.derecha img.gradiante.segundo {
+    width: 125%;
+    transform: rotate(-90deg);
+    z-index: -1;
+    top: 450px;
+}
 .derecha p {
     color: rgba(53, 25, 25, 0.911);
     font-size: 130px;
@@ -117,7 +137,7 @@ padding-bottom: 0px;
     body {
         min-width: 100%;
         min-height: 100dvh;
-        overflow-y: scroll;
+        overflow-x: hidden;
         /* flex-wrap: wrap; */
     }
     .izquierda {
@@ -126,6 +146,7 @@ padding-bottom: 0px;
 
     .tablero {
         padding: 35px;
+        margin-top: 50px;
     }
     .tablero li {
         font-size: 15px;
@@ -134,7 +155,7 @@ padding-bottom: 0px;
     .derecha {
         /* -ms-flex-item-align: start; */
         order: -1;
-        padding-top: 100px;
+        padding-top: 150px;
     }
     .derecha p {
         font-size: 100px;
